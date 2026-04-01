@@ -1,89 +1,62 @@
-import ceoImage from "@/assets/ceo-robert.jpg";
-
 const Team = () => {
   return (
-    <section id="team" className="py-24 bg-background relative">
-      {/* Grid overlay */}
-      <div className="absolute inset-0 opacity-5">
-        <div
-          className="w-full h-full"
-          style={{
-            backgroundImage:
-              "linear-gradient(hsl(var(--primary)/0.3) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)/0.3) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
-      </div>
-
+    <section id="team" className="py-24 relative">
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 border border-primary/30 bg-primary/5 mb-6">
-            <span className="w-2 h-2 bg-primary animate-pulse" />
-            <span className="font-mono text-sm tracking-wider text-muted-foreground">
-              LEADERSHIP
+          <div className="inline-flex items-center gap-2 px-4 py-2 glass-panel rounded-full mb-6">
+            <span className="w-2 h-2 bg-[hsl(var(--cyan-glow))] animate-pulse" />
+            <span className="text-[11px] tracking-[0.35em] uppercase text-muted-foreground">
+              Pogoji
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
-            Our <span className="text-primary">Team</span>
+          <h2 className="text-4xl md:text-5xl font-semibold mb-4 tracking-tight">
+            Osnovne informacije
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto font-mono text-sm">
-            Meet the visionaries driving AI education forward
+          <p className="text-muted-foreground max-w-2xl mx-auto text-sm">
+            Končni obseg in cena se določita po kratkem povpraševanju.
           </p>
         </div>
 
-        {/* CEO Card */}
+        {/* Conditions Card */}
         <div className="max-w-3xl mx-auto">
-          <div className="border border-border bg-card/50 backdrop-blur-sm p-8 md:p-12 relative group hover:border-primary/50 transition-colors duration-500">
-            {/* Corner accents */}
-            <div className="absolute top-0 left-0 w-8 h-8 border-l-2 border-t-2 border-primary" />
-            <div className="absolute bottom-0 right-0 w-8 h-8 border-r-2 border-b-2 border-primary" />
+          <div className="glass-card rounded-3xl p-8 md:p-12 relative group hover:translate-y-[-4px] transition-all duration-500">
+            <div className="absolute -top-6 right-10 w-32 h-32 rounded-full bg-[hsl(var(--rich-violet))] orb" />
 
-            <div className="flex flex-col md:flex-row gap-8 items-center">
-              {/* CEO Image */}
-              <div className="relative">
-                <div className="w-48 h-48 md:w-56 md:h-56 border-2 border-primary/30 relative overflow-hidden">
-                  <img 
-                    src={ceoImage} 
-                    alt="Robert Vogrinec - CEO" 
-                    className="w-full h-full object-cover grayscale"
-                  />
-                  {/* Grid overlay */}
-                  <div 
-                    className="absolute inset-0 opacity-20 pointer-events-none"
-                    style={{
-                      backgroundImage:
-                        "linear-gradient(hsl(var(--primary)/0.5) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)/0.5) 1px, transparent 1px)",
-                      backgroundSize: "20px 20px",
-                    }}
-                  />
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="p-4 rounded-2xl bg-background/20">
+                <div className="text-xs tracking-[0.35em] uppercase text-muted-foreground mb-2">
+                  Čas izvedbe
                 </div>
-                {/* Frame decoration */}
-                <div className="absolute -inset-2 border border-primary/20 -z-10" />
-                <div className="absolute -inset-4 border border-primary/10 -z-20" />
+                <div className="text-3xl font-semibold text-glow">7–25 dni</div>
               </div>
 
-              {/* Content */}
-              <div className="flex-1 text-center md:text-left">
-                <div className="font-mono text-xs text-primary mb-2 tracking-widest">
-                  CHIEF EXECUTIVE OFFICER
+              <div className="p-4 rounded-2xl bg-background/20">
+                <div className="text-xs tracking-[0.35em] uppercase text-muted-foreground mb-2">
+                  Investicija
                 </div>
-                <h3 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
-                  Robert Vogrinec
-                </h3>
-                <div className="w-16 h-px bg-primary mb-6 mx-auto md:mx-0" />
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  Robert Vogrinec is the visionary founder and CEO of AI Runner Institute. 
-                  With over a decade of experience in artificial intelligence and machine learning, 
-                  he has dedicated his career to democratizing AI education and making cutting-edge 
-                  technology accessible to learners worldwide.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  Under his leadership, AI Runner Institute has grown into a leading educational 
-                  platform, empowering thousands of students and professionals to master AI 
-                  technologies and drive innovation in their respective fields.
-                </p>
+                <div className="text-3xl font-semibold text-glow">
+                  700 € – 2.500 €
+                </div>
               </div>
+
+              <div className="p-4 rounded-2xl bg-background/20">
+                <div className="text-xs tracking-[0.35em] uppercase text-muted-foreground mb-2">
+                  Vzdrževanje
+                </div>
+                <div className="text-3xl font-semibold text-glow">
+                  Po dogovoru
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 flex items-center justify-center">
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-3 px-8 py-4 rounded-full text-sm tracking-[0.25em] uppercase glass-panel text-foreground/80 hover:text-foreground transition-colors"
+              >
+                Povprašaj za ponudbo
+              </a>
             </div>
           </div>
         </div>

@@ -9,12 +9,12 @@ const Partners = () => {
   ];
 
   return (
-    <section className="relative py-20 border-y border-border/30">
+    <section className="relative py-20">
       <div className="container mx-auto px-6">
         {/* Section Label */}
         <div className="text-center mb-12">
-          <span className="font-mono text-xs tracking-widest text-muted-foreground">
-            // TRUSTED BY LEADING INSTITUTIONS
+          <span className="text-[11px] tracking-[0.35em] uppercase text-muted-foreground">
+            Zaupanje vodilnih institucij
           </span>
         </div>
 
@@ -23,15 +23,16 @@ const Partners = () => {
           {partners.map((partner, index) => (
             <div
               key={index}
-              className="group flex flex-col items-center justify-center p-6 border border-border/20 bg-card/10 hover:border-primary/30 hover:bg-card/30 transition-all duration-300"
+              className="group flex flex-col items-center justify-center p-6 glass-card rounded-2xl hover:translate-y-[-4px] transition-all duration-300"
             >
               {/* Logo Placeholder */}
-              <div className="w-16 h-16 flex items-center justify-center border border-border/50 group-hover:border-primary/50 transition-colors mb-3">
-                <span className="font-mono text-xl font-bold text-muted-foreground group-hover:text-foreground transition-colors">
+              <div className="w-16 h-16 flex items-center justify-center rounded-2xl liquid-border mb-3 relative overflow-hidden">
+                <div className="absolute inset-1 rounded-2xl bg-background/60" />
+                <span className="relative z-10 text-lg font-semibold text-muted-foreground group-hover:text-foreground transition-colors">
                   {partner.initials}
                 </span>
               </div>
-              <span className="font-mono text-xs text-muted-foreground group-hover:text-foreground/70 transition-colors text-center">
+              <span className="text-xs text-muted-foreground group-hover:text-foreground/70 transition-colors text-center tracking-[0.2em] uppercase">
                 {partner.name}
               </span>
             </div>
