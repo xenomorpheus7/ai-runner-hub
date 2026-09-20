@@ -30,7 +30,7 @@ const Mission = () => {
           <div className="inline-flex items-center gap-2 mb-4 glass-panel px-4 py-2 rounded-full">
             <span className="w-6 h-px bg-gradient-to-r from-transparent via-primary to-transparent" />
             <span className="text-[11px] tracking-[0.35em] uppercase text-muted-foreground">
-              O PRISTOPU
+              O NAS
             </span>
             <span className="w-6 h-px bg-gradient-to-r from-transparent via-primary to-transparent" />
           </div>

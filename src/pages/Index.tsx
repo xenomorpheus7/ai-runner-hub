@@ -5,6 +5,7 @@ import Research from "@/components/Research";
 import Team from "@/components/Team";
 import Activities from "@/components/Activities";
 import DiscoverAIRunner from "@/components/DiscoverAIRunner";
+import Ekipa from "@/components/Ekipa";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import NeuralNetworkBackground from "@/components/NeuralNetworkBackground";
@@ -21,6 +22,7 @@ const Index = () => {
           <Research />
           <Activities />
           <Team />
+          <Ekipa />
           <DiscoverAIRunner />
           <Contact />
         </main>

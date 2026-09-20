@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import logo from "@/assets/INSTITUTE.png";
 
 const Header = () => {
@@ -8,10 +9,17 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 50);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -26,7 +34,9 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "backdrop-blur-xl" : "backdrop-blur-0"
+        isScrolled
+          ? "bg-background/70 backdrop-blur-md border-b border-white/10"
+          : "bg-transparent backdrop-blur-none"
       }`}
     >
       <div className="container mx-auto px-6 py-4">
@@ -40,6 +50,8 @@ const Header = () => {
               <img
                 src={logo}
                 alt="Logo Zavoda AI Runner"
+                loading="eager"
+                decoding="async"
                 className="h-full w-auto object-contain scale-[3.45] origin-left"
               />
             </div>
@@ -61,7 +73,21 @@ const Header = () => {
             </div>
           </div>
 
-          <div className="relative z-10 ml-auto flex items-center">
+          <div className="relative z-10 ml-auto flex items-center gap-3">
+            {/* WEBRUNNER link */}
+            <Link
+              to="/"
+              className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 rounded-full font-mono text-[11px] tracking-[0.2em] uppercase transition-all"
+              style={{
+                background: "linear-gradient(120deg, hsl(var(--electric-blue)/0.15), hsl(var(--rich-violet)/0.15))",
+                border: "1px solid hsl(var(--electric-blue)/0.3)",
+                color: "hsl(var(--electric-blue))",
+              }}
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
+              WEBRUNNER
+            </Link>
+
             {/* CTA Button */}
             <Button
               asChild
@@ -95,10 +121,18 @@ const Header = () => {
                   {link.label}
                 </a>
               ))}
+              <Link
+                to="/"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="font-mono text-xs tracking-[0.2em] uppercase py-2"
+                style={{ color: "hsl(var(--electric-blue))" }}
+              >
+                ⚡ WEBRUNNER
+              </Link>
               <Button
                 asChild
                 variant="outline"
-                className="mt-4 border-white/20 text-foreground/80 hover:text-foreground hover:border-white/40 bg-white/5 backdrop-blur-xl"
+                className="mt-2 border-white/20 text-foreground/80 hover:text-foreground hover:border-white/40 bg-white/5 backdrop-blur-xl"
               >
                 <a href="#contact">Povpraševanje</a>
               </Button>

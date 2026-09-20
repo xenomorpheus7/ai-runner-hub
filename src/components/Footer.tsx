@@ -1,4 +1,5 @@
 import { Github, Twitter, Linkedin, Youtube } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/INSTITUTE.png";
 
 const Footer = () => {
@@ -6,16 +7,16 @@ const Footer = () => {
 
   const links = {
     institute: [
-      { label: "O pristopu", href: "#mission" },
+      { label: "O nas", href: "#mission" },
       { label: "Kaj vključuje", href: "#research" },
       { label: "Čas in potek", href: "#activities" },
       { label: "Povpraševanje", href: "#contact" },
     ],
     resources: [
+      { label: "WEBRUNNER", href: "/", isRoute: true },
       { label: "Objave", href: "#" },
       { label: "Delavnice", href: "#" },
       { label: "Blog", href: "#" },
-      { label: "Zaposlitve", href: "#" },
     ],
     legal: [
       { label: "Zasebnost", href: "#" },
@@ -34,14 +35,14 @@ const Footer = () => {
   return (
     <footer className="relative py-16">
       <div className="relative z-10 container mx-auto px-6">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12 items-start">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <a href="#home" className="flex items-center gap-3 mb-6">
+            <a href="#home" className="inline-block mb-6">
               <img
                 src={logo}
                 alt="Logo Zavoda AI Runner"
-                className="h-12 md:h-14 w-auto object-contain"
+                className="h-28 md:h-40 w-auto object-contain -mt-3 md:-mt-5"
               />
             </a>
             <p className="text-muted-foreground text-sm max-w-xs mb-6">
@@ -90,12 +91,22 @@ const Footer = () => {
             <ul className="space-y-3">
               {links.resources.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {link.label}
-                  </a>
+                  {(link as any).isRoute ? (
+                    <Link
+                      to={link.href}
+                      className="text-sm font-semibold transition-colors"
+                      style={{ color: "hsl(var(--electric-blue))" }}
+                    >
+                      ⚡ {link.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

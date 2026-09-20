@@ -24,14 +24,14 @@ const Team = () => {
             <div className="absolute -top-6 right-10 w-32 h-32 rounded-full bg-[hsl(var(--rich-violet))] orb" />
 
             <div className="grid md:grid-cols-3 gap-6">
-              <div className="p-4 rounded-2xl bg-background/20">
+              <div className="p-4 rounded-2xl glass-panel">
                 <div className="text-xs tracking-[0.35em] uppercase text-muted-foreground mb-2">
                   Čas izvedbe
                 </div>
                 <div className="text-3xl font-semibold text-glow">7–25 dni</div>
               </div>
 
-              <div className="p-4 rounded-2xl bg-background/20">
+              <div className="p-4 rounded-2xl glass-panel">
                 <div className="text-xs tracking-[0.35em] uppercase text-muted-foreground mb-2">
                   Investicija
                 </div>
@@ -40,7 +40,7 @@ const Team = () => {
                 </div>
               </div>
 
-              <div className="p-4 rounded-2xl bg-background/20">
+              <div className="p-4 rounded-2xl glass-panel">
                 <div className="text-xs tracking-[0.35em] uppercase text-muted-foreground mb-2">
                   Vzdrževanje
                 </div>

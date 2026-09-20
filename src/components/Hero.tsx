@@ -10,7 +10,7 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-6 text-center">
         {/* Main Heading */}
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold leading-tight mb-6 animate-fade-in-up gradient-text text-glow">
-          AI pismenost in digitalne rešitve za sodobna podjetja.
+          Digitalne rešitve in AI pismenost za šole in podjetja.
         </h1>
 
         {/* Subtitle */}
@@ -18,8 +18,8 @@ const Hero = () => {
           className="max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground mb-12 font-light animate-fade-in-up"
           style={{ animationDelay: "0.2s" }}
         >
-          Opolnomočamo šole in podjetja z znanjem umetne inteligence ter
-          razvijamo spletne strani in AI orodja za digitalno rast.
+          Opolnomočamo vzgojno-izobraževalne ustanove in podjetja z znanjem umetne inteligence ter
+          razvijamo spletne aplikacije in AI rešitve za digitalno rast.
         </p>
 
         {/* CTA Buttons */}
@@ -39,7 +39,7 @@ const Hero = () => {
             href="#mission"
             className="px-8 py-4 rounded-full glass-panel text-sm tracking-[0.25em] uppercase text-foreground/80 hover:text-foreground transition-colors"
           >
-            O pristopu
+            O nas
           </a>
         </div>
       </div>

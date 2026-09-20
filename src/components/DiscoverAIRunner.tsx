@@ -21,13 +21,12 @@ const DiscoverAIRunner = () => {
 
           {/* Title */}
           <h2 className="text-3xl md:text-5xl font-semibold mb-6">
-            Nadgradnja z umetno inteligenco
+            Implementacija AI sistemov
           </h2>
 
           {/* Description */}
           <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
-            Po potrebi lahko vključimo funkcionalnosti, ki naredijo vašo
-            spletno stran bolj uporabno in odzivno.
+            V spletno stran integriramo napredne AI rešitve, kot so pametni asistenti, avtomatizirani odzivi, personalizirana vsebina in analitika uporabniškega vedenja, ki skupaj ustvarjajo učinkovitejšo digitalno izkušnjo.
           </p>
 
           {/* Features */}
@@ -47,9 +46,7 @@ const DiscoverAIRunner = () => {
 
           {/* CTA */}
           <div className="mt-10 glass-card rounded-3xl p-6 md:p-8 max-w-xl mx-auto">
-            <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-              Funkcionalnosti vključimo le, ko imajo smisel za vaš projekt.
-            </p>
+
             <a
               href="#contact"
               className="group inline-flex items-center gap-3 px-8 py-4 rounded-full text-sm tracking-[0.25em] uppercase overflow-hidden transition-all text-foreground"
