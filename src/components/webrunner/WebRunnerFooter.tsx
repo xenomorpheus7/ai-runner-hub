@@ -1,24 +1,5 @@
 import { Github, Twitter, Linkedin, Mail } from "lucide-react";
-
-const footerLinks = {
-  service: [
-    { label: "How it Works", href: "#wr-process" },
-    { label: "Performance", href: "#wr-metrics" },
-    { label: "FAQ",          href: "#wr-faq" },
-    { label: "Contact",      href: "#wr-contact" },
-  ],
-  stack: [
-    { label: "React / Next.js", href: "#" },
-    { label: "TypeScript",      href: "#" },
-    { label: "Tailwind CSS",    href: "#" },
-    { label: "Supabase",        href: "#" },
-  ],
-  legal: [
-    { label: "Privacy Policy", href: "#" },
-    { label: "Terms of Use",   href: "#" },
-    { label: "Cookies",        href: "#" },
-  ],
-};
+import { Link } from "react-router-dom";
 
 const socials = [
   { icon: Github,   href: "#", label: "GitHub" },
@@ -55,6 +36,14 @@ const WebRunnerFooter = () => {
               Custom websites engineered for speed, design, and results.
               From landing pages to full-stack applications.
             </p>
+            {/* AI Runner Institute link */}
+            <Link
+              to="/institute"
+              className="inline-flex items-center gap-2 text-xs text-muted-foreground hover:text-foreground transition-colors group mb-6"
+            >
+              <span className="w-4 h-px bg-muted-foreground group-hover:bg-foreground transition-colors" />
+              <span className="font-mono tracking-[0.2em] uppercase">AI Runner Institute</span>
+            </Link>
             {/* Socials */}
             <div className="flex items-center gap-3">
               {socials.map((s) => (
@@ -76,7 +65,12 @@ const WebRunnerFooter = () => {
               Service
             </h4>
             <ul className="space-y-3">
-              {footerLinks.service.map((link) => (
+              {[
+                { label: "How it Works", href: "#wr-process" },
+                { label: "Performance",  href: "#wr-metrics" },
+                { label: "FAQ",          href: "#wr-faq" },
+                { label: "Contact",      href: "#wr-contact" },
+              ].map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
@@ -89,32 +83,31 @@ const WebRunnerFooter = () => {
             </ul>
           </div>
 
-          {/* Stack links */}
+          {/* Tech Stack */}
           <div>
             <h4 className="font-mono text-[10px] tracking-[0.35em] uppercase text-muted-foreground mb-4">
               Tech Stack
             </h4>
             <ul className="space-y-3">
-              {footerLinks.stack.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors font-mono text-xs"
-                  >
-                    {link.label}
-                  </a>
+              {["React / Next.js", "TypeScript", "Tailwind CSS", "Supabase"].map((t) => (
+                <li key={t}>
+                  <span className="font-mono text-xs text-muted-foreground">{t}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Legal links */}
+          {/* Legal */}
           <div>
             <h4 className="font-mono text-[10px] tracking-[0.35em] uppercase text-muted-foreground mb-4">
               Legal
             </h4>
             <ul className="space-y-3">
-              {footerLinks.legal.map((link) => (
+              {[
+                { label: "Privacy Policy", href: "#" },
+                { label: "Terms of Use",   href: "#" },
+                { label: "Cookies",        href: "#" },
+              ].map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
