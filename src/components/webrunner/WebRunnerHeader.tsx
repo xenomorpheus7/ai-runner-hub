@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const navLinks = [
   { href: "#wr-home",    label: "Home" },
@@ -80,7 +81,13 @@ const WebRunnerHeader = () => {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-4">
+            <Link
+              to="/"
+              className="text-xs font-mono tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors"
+            >
+              ← Institute
+            </Link>
             <a
               href="#wr-contact"
               className="relative inline-flex items-center px-5 py-2 rounded-full text-xs tracking-[0.22em] uppercase overflow-hidden text-foreground"
@@ -114,6 +121,13 @@ const WebRunnerHeader = () => {
                 {link.label}
               </a>
             ))}
+            <Link
+              to="/"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-center font-mono text-xs tracking-[0.22em] uppercase text-muted-foreground hover:text-foreground transition-colors py-1"
+            >
+              ← AI Runner Institute
+            </Link>
             <a
               href="#wr-contact"
               onClick={() => setIsMobileMenuOpen(false)}

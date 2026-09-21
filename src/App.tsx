@@ -16,10 +16,11 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          {/* WEBRUNNER is the main landing page */}
-          <Route path="/" element={<WebRunner />} />
-          {/* AI Runner Institute page */}
+          {/* Main website: AI Runner Institute */}
+          <Route path="/" element={<Index />} />
           <Route path="/institute" element={<Index />} />
+          {/* Dedicated WEBRUNNER Landing Page */}
+          <Route path="/webrunner" element={<WebRunner />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

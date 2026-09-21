@@ -13,7 +13,7 @@ const Footer = () => {
       { label: "Povpraševanje", href: "#contact" },
     ],
     resources: [
-      { label: "WEBRUNNER", href: "/", isRoute: true },
+      { label: "WEBRUNNER", href: "/webrunner", isRoute: true },
       { label: "Objave", href: "#" },
       { label: "Delavnice", href: "#" },
       { label: "Blog", href: "#" },

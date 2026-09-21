@@ -76,8 +76,8 @@ const Header = () => {
           <div className="relative z-10 ml-auto flex items-center gap-3">
             {/* WEBRUNNER link */}
             <Link
-              to="/"
-              className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 rounded-full font-mono text-[11px] tracking-[0.2em] uppercase transition-all"
+              to="/webrunner"
+              className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 rounded-full font-mono text-[11px] tracking-[0.2em] uppercase transition-all hover:scale-105"
               style={{
                 background: "linear-gradient(120deg, hsl(var(--electric-blue)/0.15), hsl(var(--rich-violet)/0.15))",
                 border: "1px solid hsl(var(--electric-blue)/0.3)",
@@ -85,7 +85,7 @@ const Header = () => {
               }}
             >
               <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
-              WEBRUNNER
+              ⚡ WEBRUNNER
             </Link>
 
             {/* CTA Button */}
@@ -122,7 +122,7 @@ const Header = () => {
                 </a>
               ))}
               <Link
-                to="/"
+                to="/webrunner"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="font-mono text-xs tracking-[0.2em] uppercase py-2"
                 style={{ color: "hsl(var(--electric-blue))" }}
