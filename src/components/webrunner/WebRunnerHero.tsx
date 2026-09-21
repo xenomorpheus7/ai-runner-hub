@@ -69,7 +69,7 @@ const WebRunnerHero = () => {
         <div className="inline-flex items-center gap-2 mb-8 glass-panel px-5 py-2 rounded-full">
           <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
           <span className="font-mono text-[11px] tracking-[0.4em] uppercase text-primary">
-            Website Building · Design · Engineering
+            Izdelava spletnih strani · Dizajn · Inženiring
           </span>
         </div>
 
@@ -90,15 +90,15 @@ const WebRunnerHero = () => {
 
         {/* Subtitle */}
         <p className="font-mono text-sm md:text-base tracking-[0.25em] uppercase text-muted-foreground mb-6">
-          Web Engineering &middot; Performance &middot; Design Systems
+          Spletni inženiring &middot; Hitrost & zmogljivost &middot; Dizajn sistemi
         </p>
 
         {/* Tagline */}
         <p className="max-w-2xl mx-auto text-xl md:text-2xl font-light text-foreground/80 mb-12 leading-relaxed">
-          Custom websites built for{" "}
-          <span className="gradient-text font-medium">speed</span>,{" "}
-          <span className="gradient-text font-medium">design</span>, and{" "}
-          <span className="gradient-text font-medium">results</span>.
+          Spletne strani po meri, ustvarjene za{" "}
+          <span className="gradient-text font-medium">hitrost</span>,{" "}
+          <span className="gradient-text font-medium">vrhunski dizajn</span> in{" "}
+          <span className="gradient-text font-medium">rezultate</span>.
         </p>
 
         {/* CTAs */}
@@ -110,7 +110,7 @@ const WebRunnerHero = () => {
             <span className="absolute inset-0 liquid-border opacity-90" />
             <span className="absolute inset-0 bg-background/50" />
             <span className="relative z-10 flex items-center gap-2">
-              Start a Project
+              Začnite projekt
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </span>
           </a>
@@ -119,16 +119,16 @@ const WebRunnerHero = () => {
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full glass-panel text-sm tracking-[0.2em] uppercase text-foreground/80 hover:text-foreground transition-colors"
           >
             <Code2 size={16} />
-            How it works
+            Kako deluje
           </a>
         </div>
 
         {/* Quick stats bar */}
         <div className="inline-flex flex-wrap justify-center gap-x-10 gap-y-4 glass-panel px-10 py-5 rounded-2xl">
           {[
-            { icon: Zap, label: "FCP", value: "< 0.9s" },
-            { icon: Globe, label: "Lighthouse", value: "100" },
-            { icon: Code2, label: "Delivery", value: "7–25 days" },
+            { icon: Zap, label: "FCP hitrost", value: "< 0.9s" },
+            { icon: Globe, label: "Lighthouse ocena", value: "100" },
+            { icon: Code2, label: "Hitra izvedba", value: "7–25 dni" },
           ].map(({ icon: Icon, label, value }) => (
             <div key={label} className="flex items-center gap-3">
               <Icon size={16} className="text-primary" />

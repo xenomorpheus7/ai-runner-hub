@@ -4,34 +4,34 @@ const steps = [
   {
     num: "01",
     icon: MessageSquare,
-    title: "Discovery",
-    subtitle: "Free 30-min call",
-    desc: "We map your requirements, target audience, desired structure, and tech constraints. You get a written brief recap.",
-    tags: ["Brief", "Timeline", "Budget"],
+    title: "Odkrivanje & analiza",
+    subtitle: "Brezplačen 30-min posvet",
+    desc: "Opredelimo vaše poslovne cilje, ciljno občinstvo, strukturo strani in tehnične zahteve. Pripravimo jasen načrt sodelovanja.",
+    tags: ["Cilji", "Časovnica", "Načrt"],
   },
   {
     num: "02",
     icon: PenTool,
-    title: "Design",
-    subtitle: "Wireframe → Visual",
-    desc: "Wireframes first, then high-fidelity UI in Figma. Brand colors, typography, and component library established here.",
-    tags: ["Figma", "Wireframe", "Design System"],
+    title: "Oblikovanje (UI/UX)",
+    subtitle: "Žični model → Končni dizajn",
+    desc: "Najprej uskladimo strukturo z žičnimi modeli, nato izdelamo moderen vizualni dizajn v Figmi z usklajeno barvno paleto in tipografijo.",
+    tags: ["Figma", "Žični modeli", "Dizajn sistem"],
   },
   {
     num: "03",
     icon: Code,
-    title: "Development",
-    subtitle: "Code → Review",
-    desc: "Implementation using the agreed stack. Version-controlled on GitHub. You can view live previews at every milestone.",
-    tags: ["GitHub", "Live Preview", "TypeScript"],
+    title: "Razvoj & programiranje",
+    subtitle: "Koda → Predogled v živo",
+    desc: "Izvedba z najsodobnejšo tehnologijo. Koda je urejena v repozitoriju na GitHubu, vi pa imate vpogled v delujočo stran ob vsakem koraku.",
+    tags: ["GitHub", "Predogled v živo", "TypeScript"],
   },
   {
     num: "04",
     icon: Rocket,
-    title: "QA & Launch",
-    subtitle: "Test → Deploy",
-    desc: "Cross-device testing, Core Web Vitals audit, SEO checklist, accessibility check — then one-click deploy to edge.",
-    tags: ["Lighthouse", "SEO", "Vercel"],
+    title: "Testiranje & objava",
+    subtitle: "Preverjanje → Objava",
+    desc: "Natančno testiranje na mobilnih napravah, optimizacija Core Web Vitals, osnovna SEO nastavitev ter zanesljivo lansiranje na strežnik.",
+    tags: ["Lighthouse", "SEO", "Cloudflare / Edge"],
   },
 ];
 
@@ -44,13 +44,13 @@ const WebRunnerProcess = () => {
           <div className="inline-flex items-center gap-2 glass-panel px-4 py-2 rounded-full mb-4">
             <span className="w-6 h-px bg-gradient-to-r from-transparent via-primary to-transparent" />
             <span className="font-mono text-[11px] tracking-[0.35em] uppercase text-muted-foreground">
-              Process
+              Postopek dela
             </span>
             <span className="w-6 h-px bg-gradient-to-r from-transparent via-primary to-transparent" />
           </div>
-          <h2 className="text-3xl md:text-5xl font-semibold mb-4">How it works</h2>
+          <h2 className="text-3xl md:text-5xl font-semibold mb-4">Kako poteka sodelovanje</h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            A clear, repeatable process with zero guesswork — from first call to live URL.
+            Jasen, strukturiran in transparenten proces brez ugibanj – od prvega klica do objave na spletu.
           </p>
         </div>
 

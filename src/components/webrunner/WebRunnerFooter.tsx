@@ -5,7 +5,7 @@ const socials = [
   { icon: Github,   href: "#", label: "GitHub" },
   { icon: Twitter,  href: "#", label: "Twitter / X" },
   { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Mail,     href: "#wr-contact", label: "Email" },
+  { icon: Mail,     href: "#wr-contact", label: "E-pošta" },
 ];
 
 const WebRunnerFooter = () => {
@@ -33,16 +33,16 @@ const WebRunnerFooter = () => {
               </span>
             </a>
             <p className="text-sm text-muted-foreground max-w-xs leading-relaxed mb-6">
-              Custom websites engineered for speed, design, and results.
-              From landing pages to full-stack applications.
+              Spletne strani po meri, ustvarjene za hitrost, vrhunski dizajn in rezultate.
+              Od predstavitvenih strani do naprednih spletnih aplikacij.
             </p>
             {/* AI Runner Institute link */}
             <Link
-              to="/institute"
+              to="/"
               className="inline-flex items-center gap-2 text-xs text-muted-foreground hover:text-foreground transition-colors group mb-6"
             >
               <span className="w-4 h-px bg-muted-foreground group-hover:bg-foreground transition-colors" />
-              <span className="font-mono tracking-[0.2em] uppercase">AI Runner Institute</span>
+              <span className="font-mono tracking-[0.2em] uppercase">Zavod AI Runner</span>
             </Link>
             {/* Socials */}
             <div className="flex items-center gap-3">
@@ -59,17 +59,17 @@ const WebRunnerFooter = () => {
             </div>
           </div>
 
-          {/* Service links */}
+          {/* Storitve */}
           <div>
             <h4 className="font-mono text-[10px] tracking-[0.35em] uppercase text-muted-foreground mb-4">
-              Service
+              Storitve
             </h4>
             <ul className="space-y-3">
               {[
-                { label: "How it Works", href: "#wr-process" },
-                { label: "Performance",  href: "#wr-metrics" },
-                { label: "FAQ",          href: "#wr-faq" },
-                { label: "Contact",      href: "#wr-contact" },
+                { label: "Kako deluje",     href: "#wr-process" },
+                { label: "Zmogljivost",     href: "#wr-metrics" },
+                { label: "Pogosta vprašanja", href: "#wr-faq" },
+                { label: "Kontakt",         href: "#wr-contact" },
               ].map((link) => (
                 <li key={link.label}>
                   <a
@@ -83,10 +83,10 @@ const WebRunnerFooter = () => {
             </ul>
           </div>
 
-          {/* Tech Stack */}
+          {/* Tehnologije */}
           <div>
             <h4 className="font-mono text-[10px] tracking-[0.35em] uppercase text-muted-foreground mb-4">
-              Tech Stack
+              Tehnologije
             </h4>
             <ul className="space-y-3">
               {["React / Next.js", "TypeScript", "Tailwind CSS", "Supabase"].map((t) => (
@@ -97,16 +97,16 @@ const WebRunnerFooter = () => {
             </ul>
           </div>
 
-          {/* Legal */}
+          {/* Pravno */}
           <div>
             <h4 className="font-mono text-[10px] tracking-[0.35em] uppercase text-muted-foreground mb-4">
-              Legal
+              Pravno
             </h4>
             <ul className="space-y-3">
               {[
-                { label: "Privacy Policy", href: "#" },
-                { label: "Terms of Use",   href: "#" },
-                { label: "Cookies",        href: "#" },
+                { label: "Zasebnost",      href: "#" },
+                { label: "Pogoji uporabe", href: "#" },
+                { label: "Piškotki",       href: "#" },
               ].map((link) => (
                 <li key={link.label}>
                   <a
@@ -124,10 +124,10 @@ const WebRunnerFooter = () => {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-3">
           <p className="font-mono text-[10px] text-muted-foreground tracking-[0.2em] uppercase">
-            © {year} WEBRUNNER. All rights reserved.
+            © {year} WEBRUNNER. Vse pravice pridržane.
           </p>
           <p className="font-mono text-[10px] text-muted-foreground tracking-[0.2em] uppercase">
-            Engineered for performance · Deployed to the edge
+            Inženiring za visoko hitrost · Edge omrežje
           </p>
         </div>
       </div>

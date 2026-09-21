@@ -2,12 +2,12 @@ import { Mail, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const projectTypes = [
-  "Landing page",
-  "Business website",
-  "E-commerce",
-  "Full-stack app",
-  "AI integration",
-  "WordPress CMS",
+  "Pristajalne strani",
+  "Poslovne spletne strani",
+  "Spletne trgovine",
+  "Aplikacije po meri",
+  "AI integracije",
+  "CMS rešitve",
 ];
 
 const WebRunnerContact = () => {
@@ -23,14 +23,14 @@ const WebRunnerContact = () => {
           <div className="inline-flex items-center gap-2 glass-panel px-4 py-2 rounded-full mb-4">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
             <span className="font-mono text-[11px] tracking-[0.35em] uppercase text-muted-foreground">
-              Start a project
+              Začnite projekt
             </span>
           </div>
           <h2 className="text-3xl md:text-5xl font-semibold mb-4">
-            Let's build something great
+            Zgradimo vašo novo spletno stran
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto text-lg">
-            Free 30-minute discovery call. No commitment. We'll map your project and send a written proposal.
+            Brezplačen 30-minutni uvodni posvet. Brez obveznosti. Skupaj opredelimo cilje in pripravimo ponudbo.
           </p>
         </div>
 
@@ -43,16 +43,16 @@ const WebRunnerContact = () => {
                 <Mail size={20} className="text-primary" />
               </div>
               <div>
-                <h4 className="font-semibold text-sm mb-1">Email</h4>
+                <h4 className="font-semibold text-sm mb-1">E-pošta</h4>
                 <p className="text-muted-foreground text-sm">contact@airunner.institute</p>
-                <p className="text-muted-foreground text-xs mt-1">We respond within 24 hours.</p>
+                <p className="text-muted-foreground text-xs mt-1">Odgovorimo v roku 24 ur.</p>
               </div>
             </div>
 
             {/* Project type grid */}
             <div>
               <p className="font-mono text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-4">
-                What can we build?
+                Kaj lahko izdelamo za vas?
               </p>
               <div className="grid grid-cols-2 gap-2">
                 {projectTypes.map((t) => (
@@ -67,11 +67,11 @@ const WebRunnerContact = () => {
             {/* Callout */}
             <div className="glass-card rounded-2xl p-6">
               <p className="font-mono text-[10px] tracking-[0.25em] uppercase text-primary mb-2">
-                Free discovery call
+                Brezplačen uvodni posvet
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Every project starts with a call where we understand your goals, suggest a tech
-                stack, and give you a realistic timeline and budget estimate — all for free.
+                Vsak projekt začnemo s pogovorom, kjer natančno spoznamo vaše zahteve, predlagamo optimalno
+                strukturo in tehnologijo ter določimo realne časovne in finančne okvirje.
               </p>
             </div>
           </div>
@@ -79,14 +79,14 @@ const WebRunnerContact = () => {
           {/* Right — form */}
           <div className="relative glass-card rounded-3xl p-8 md:p-10">
             <div className="absolute -top-3 left-8 px-4 py-1 glass-panel rounded-full font-mono text-[10px] tracking-[0.3em] uppercase text-muted-foreground">
-              WEBRUNNER Inquiry
+              Povpraševanje WEBRUNNER
             </div>
 
             <form className="space-y-5 mt-4">
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-1.5">
                   <label className="font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
-                    Name
+                    Ime in priimek
                   </label>
                   <input
                     type="text"
@@ -97,7 +97,7 @@ const WebRunnerContact = () => {
                 </div>
                 <div className="space-y-1.5">
                   <label className="font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
-                    Email
+                    E-poštni naslov
                   </label>
                   <input
                     type="email"
@@ -110,40 +110,42 @@ const WebRunnerContact = () => {
 
               <div className="space-y-1.5">
                 <label className="font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
-                  Project Type
+                  Vrsta projekta
                 </label>
                 <select
                   name="type"
                   className="w-full px-4 py-3 rounded-xl glass-input text-foreground text-sm focus:outline-none focus:border-primary/50 transition-colors appearance-none"
                 >
-                  <option value="" style={{ background: "hsl(226 48% 10%)" }}>Select a package...</option>
-                  <option value="starter" style={{ background: "hsl(226 48% 10%)" }}>Starter — 700 € – 950 €</option>
-                  <option value="business" style={{ background: "hsl(226 48% 10%)" }}>Business — 1.200 € – 1.800 €</option>
-                  <option value="enterprise" style={{ background: "hsl(226 48% 10%)" }}>Enterprise — 2.000 € – 2.500 €+</option>
-                  <option value="custom" style={{ background: "hsl(226 48% 10%)" }}>Custom / Not sure yet</option>
+                  <option value="" style={{ background: "hsl(226 48% 10%)" }}>Izberite vrsto strani...</option>
+                  <option value="landing" style={{ background: "hsl(226 48% 10%)" }}>Pristajalna stran (Landing page)</option>
+                  <option value="business" style={{ background: "hsl(226 48% 10%)" }}>Poslovna spletna stran</option>
+                  <option value="ecommerce" style={{ background: "hsl(226 48% 10%)" }}>Spletna trgovina</option>
+                  <option value="custom" style={{ background: "hsl(226 48% 10%)" }}>Aplikacija po meri</option>
+                  <option value="ai" style={{ background: "hsl(226 48% 10%)" }}>Umetna inteligenca (AI integracija)</option>
+                  <option value="other" style={{ background: "hsl(226 48% 10%)" }}>Drugo / Po dogovoru</option>
                 </select>
               </div>
 
               <div className="space-y-1.5">
                 <label className="font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
-                  Project Description
+                  Opis projekta
                 </label>
                 <textarea
                   rows={4}
                   name="message"
-                  placeholder="Describe your project, goals, any existing materials..."
+                  placeholder="Opišite vašo dejavnost, cilje nove strani, želene funkcije ali obstoječe gradivo..."
                   className="w-full px-4 py-3 rounded-xl glass-input text-foreground placeholder:text-muted-foreground/40 text-sm focus:outline-none focus:border-primary/50 transition-colors resize-none"
                 />
               </div>
 
               <div className="space-y-1.5">
                 <label className="font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
-                  Budget Range
+                  Časovni okvir / Želeni rok
                 </label>
                 <input
                   type="text"
                   name="budget"
-                  placeholder="e.g. 700 € – 1.500 €"
+                  placeholder="npr. v roku enega meseca / po dogovoru"
                   className="w-full px-4 py-3 rounded-xl glass-input text-foreground placeholder:text-muted-foreground/40 text-sm focus:outline-none focus:border-primary/50 transition-colors"
                 />
               </div>
@@ -155,7 +157,7 @@ const WebRunnerContact = () => {
                 <span className="absolute inset-0 liquid-border opacity-90" />
                 <span className="absolute inset-0 bg-background/40" />
                 <span className="relative z-10 flex items-center justify-center gap-2">
-                  Send Inquiry
+                  Pošlji povpraševanje
                   <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
                 </span>
               </Button>

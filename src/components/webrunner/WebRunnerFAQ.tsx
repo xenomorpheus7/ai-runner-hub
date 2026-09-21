@@ -3,36 +3,36 @@ import { Plus, Minus } from "lucide-react";
 
 const faqs = [
   {
-    q: "What technologies do you use for the frontend?",
-    a: "We primarily use React with TypeScript, built with Vite for lightning-fast development. For projects requiring SSR or SSG, we use Next.js 14+. Styling is done with Tailwind CSS and a custom design system. For CMS-backed sites, we integrate Sanity, Contentful, or WordPress as a headless CMS.",
+    q: "Katere tehnologije uporabljate za izdelavo spletnih strani?",
+    a: "Primarno razvijamo z Reactom in TypeScriptom v okolju Vite za izjemno hitrost in čistost kode. Za projekte s potrebo po strežniškem upodabljanju (SSR) ali statičnem generiranju (SSG) uporabljamo Next.js. Oblikovanje temelji na Tailwind CSS in namenskem dizajn sistemu. Za urejanje vsebin integriramo sodobne CMS rešitve (kot so Sanity, Strapi ali WordPress).",
   },
   {
-    q: "Where will my website be hosted?",
-    a: "We deploy to Vercel (edge network, 99.99% uptime SLA) for React/Next.js projects, or to Netlify, Cloudflare Pages, or a custom VPS depending on your needs. Domain setup, SSL certificates (via Let's Encrypt or Cloudflare), and CDN configuration are all handled as part of the launch process.",
+    q: "Kje bo moja spletna stran gostovala?",
+    a: "Strani nameščamo na sodobna globalna edge omrežja, kot sta Cloudflare Pages in Vercel (z 99,99 % zanesljivostjo delovanja), ali na vaš strežnik po meri. Nastavitev domene, SSL certifikatov za varno povezavo (HTTPS) in predpomnjenja CDN je v celoti del postopka lansiranja.",
   },
   {
-    q: "Will I be able to edit the content myself?",
-    a: "Yes. Business and Enterprise packages include CMS integration. You'll have a user-friendly dashboard (e.g., Sanity Studio or WordPress admin) to manage pages, text, images, and blog posts without touching any code. Starter sites can be set up with a lightweight CMS on request.",
+    q: "Ali bom lahko samostojno urejal vsebino?",
+    a: "Da. Po dogovoru vključimo uporabniku prijazen CMS sistem. Prejeli boste pregledno nadzorno ploščo, prek katere lahko preprosto spreminjate besedila, slike, novice in izdelke brez programerskega znanja.",
   },
   {
-    q: "How do you ensure website performance?",
-    a: "We audit against Core Web Vitals (LCP, FID, CLS) at every milestone. We use code splitting, lazy loading, image optimization (WebP + next/image), minimal JS bundles, and edge caching. Target is Lighthouse 95+ for Business and 100 for Enterprise tier.",
+    q: "Kako zagotavljate visoko hitrost in zmogljivost?",
+    a: "Ob vsaki razvojni fazi preverjamo parametre Core Web Vitals (LCP, FID, CLS). Uporabljamo razdeljevanje kode (code-splitting), leno nalaganje (lazy loading), napredno stiskanje slik v sodobnih formatih (WebP) ter predpomnjenje na robu omrežja. Cilj je Lighthouse ocena nad 95+.",
   },
   {
-    q: "Do you provide SEO optimization?",
-    a: "Yes — all packages include technical SEO: semantic HTML structure, proper heading hierarchy, meta tags, Open Graph tags, canonical URLs, robots.txt, sitemap.xml, and Google Search Console setup. Enterprise also includes structured data (JSON-LD schema) and performance-oriented SEO analysis.",
+    q: "Ali poskrbite za SEO optimizacijo?",
+    a: "Vsekakor. Vsaka spletna stran vključuje celovito tehnično SEO pripravo: semantično HTML strukturo, pravilno hierarhijo naslovov, meta oznake, Open Graph kartice za družbena omrežja, kanonične povezave, datoteko robots.txt, sitemap.xml zemljevid strani ter povezavo z orodjem Google Search Console.",
   },
   {
-    q: "How many revisions are included?",
-    a: "Starter: 1 revision round. Business: 2 revision rounds. Enterprise: 3 revision rounds. A revision round is a consolidated batch of feedback. Structural changes after development begins may require a scope adjustment.",
+    q: "Koliko krogov usklajevanja in popravkov je vključenih?",
+    a: "Običajno sodelovanje vključuje od 2 do 3 strukturirane kroge usklajevanja in popravkov. Vsak krog temelji na zbranih povratnih informacijah, kar zagotavlja učinkovito izvedbo brez nepotrebnih zamud.",
   },
   {
-    q: "Can you integrate AI features into my website?",
-    a: "Yes — this is one of our core competencies through AI Runner Institute. We can integrate AI-powered chat assistants (GPT-4, Claude, custom fine-tuned models), smart search, automated content personalization, AI form processing, and analytics-driven recommendations. Enterprise tier includes AI feature planning by default.",
+    q: "Ali lahko v spletno stran vključite umetno inteligenco (AI)?",
+    a: "Vsekakor – to je ena naših osrednjih prednosti prek Zavoda AI Runner. V vašo stran lahko integriramo pametne AI asistente in klepetalne bote (GPT, Claude ali modele po meri), pametno iskanje, avtomatizirano obdelavo povpraševanj ter napredne rešitve za podporo strankam.",
   },
   {
-    q: "What happens after the project is launched?",
-    a: "Business tier includes 30 days of post-launch support (bug fixes, content tweaks, minor adjustments). Enterprise includes 60 days. After that, we offer optional monthly maintenance retainers. All projects are handed over with full code access, documentation, and environment credentials.",
+    q: "Kaj se zgodi po zaključku in objavi spletne strani?",
+    a: "Po lansiranju zagotavljamo obdobje tehnične podpore (odprava morebitnih napak, manjše prilagoditve in uvajanje v uporabo). Po želji nudimo tudi mesečno vzdrževanje, varnostne posodobitve in nadaljnji razvoj. Po zaključku prejmete vso izvorno kodo in dostope.",
   },
 ];
 
@@ -47,15 +47,15 @@ const WebRunnerFAQ = () => {
           <div className="inline-flex items-center gap-2 glass-panel px-4 py-2 rounded-full mb-4">
             <span className="w-6 h-px bg-gradient-to-r from-transparent via-primary to-transparent" />
             <span className="font-mono text-[11px] tracking-[0.35em] uppercase text-muted-foreground">
-              FAQ
+              Pogosta vprašanja
             </span>
             <span className="w-6 h-px bg-gradient-to-r from-transparent via-primary to-transparent" />
           </div>
           <h2 className="text-3xl md:text-5xl font-semibold mb-4">
-            Technical questions answered
+            Vse, kar morate vedeti
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Everything you need to know before starting a project with us.
+            Odgovori na ključna tehnična in organizacijska vprašanja pred začetkom projekta.
           </p>
         </div>
 

@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 
 const metrics = [
-  { value: 100, suffix: "", prefix: "", label: "Lighthouse Score", sub: "Performance / SEO / Accessibility" },
-  { value: 0.9, suffix: "s", prefix: "<", label: "First Contentful Paint", sub: "Average across delivered projects" },
-  { value: 99.9, suffix: "%", prefix: "", label: "Uptime SLA", sub: "Vercel Edge + Cloudflare CDN" },
-  { value: 50, suffix: "kb", prefix: "<", label: "CSS Bundle (gzip)", sub: "Utility-first, purged at build" },
-  { value: 25, suffix: " days", prefix: "<", label: "Fastest Delivery", sub: "Enterprise full-stack project" },
-  { value: 100, suffix: "%", prefix: "", label: "Mobile Responsive", sub: "Every breakpoint tested" },
+  { value: 100, suffix: "", prefix: "", label: "Lighthouse ocena", sub: "Hitrost / SEO / Dostopnost" },
+  { value: 0.9, suffix: "s", prefix: "< ", label: "First Contentful Paint", sub: "Povprečje izvedenih strani" },
+  { value: 99.9, suffix: "%", prefix: "", label: "Uptime zanesljivost", sub: "Cloudflare Edge & CDN" },
+  { value: 50, suffix: "kb", prefix: "< ", label: "CSS paket (gzip)", sub: "Čista, optimizirana koda" },
+  { value: 25, suffix: " dni", prefix: "< ", label: "Hitra izvedba", sub: "Od ideje do objave" },
+  { value: 100, suffix: "%", prefix: "", label: "Mobilna prilagojenost", sub: "Brezhibno na vseh napravah" },
 ];
 
 function useCountUp(target: number, duration = 1800, started: boolean) {
@@ -68,15 +68,15 @@ const WebRunnerMetrics = () => {
           <div className="inline-flex items-center gap-2 glass-panel px-4 py-2 rounded-full mb-4">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
             <span className="font-mono text-[11px] tracking-[0.35em] uppercase text-muted-foreground">
-              By the numbers
+              V številkah
             </span>
           </div>
           <h2 className="text-3xl md:text-5xl font-semibold mb-4">
-            Performance is not optional
+            Zmogljivost in hitrost brez kompromisov
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Every site we deliver is measured against industry benchmarks. These are our
-            standards — not aspirations.
+            Vsaka spletna stran, ki jo izdelamo, je optimizirana po strogih industrijskih standardih za
+            takojšnje nalaganje in odlično uporabniško izkušnjo.
           </p>
         </div>
 

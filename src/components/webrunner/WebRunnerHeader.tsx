@@ -3,10 +3,10 @@ import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const navLinks = [
-  { href: "#wr-home",    label: "Home" },
-  { href: "#wr-process", label: "Process" },
-  { href: "#wr-metrics", label: "Performance" },
-  { href: "#wr-faq",    label: "FAQ" },
+  { href: "#wr-home",    label: "Domov" },
+  { href: "#wr-process", label: "Postopek" },
+  { href: "#wr-metrics", label: "Zmogljivost" },
+  { href: "#wr-faq",    label: "Vprašanja" },
 ];
 
 const WebRunnerHeader = () => {
@@ -43,7 +43,7 @@ const WebRunnerHeader = () => {
           <a
             href="#wr-home"
             className="flex items-center gap-3 group"
-            aria-label="WEBRUNNER home"
+            aria-label="WEBRUNNER domov"
           >
             {/* Animated dot */}
             <span className="relative flex h-2.5 w-2.5">
@@ -86,7 +86,7 @@ const WebRunnerHeader = () => {
               to="/"
               className="text-xs font-mono tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors"
             >
-              ← Institute
+              ← Zavod
             </Link>
             <a
               href="#wr-contact"
@@ -94,7 +94,7 @@ const WebRunnerHeader = () => {
             >
               <span className="absolute inset-0 liquid-border opacity-80" />
               <span className="absolute inset-0 bg-background/50" />
-              <span className="relative z-10">Start a Project</span>
+              <span className="relative z-10">Začni projekt</span>
             </a>
           </div>
 
@@ -102,7 +102,7 @@ const WebRunnerHeader = () => {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden p-2 text-foreground"
-            aria-label="Toggle menu"
+            aria-label="Odpri meni"
           >
             {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
@@ -126,14 +126,14 @@ const WebRunnerHeader = () => {
               onClick={() => setIsMobileMenuOpen(false)}
               className="text-center font-mono text-xs tracking-[0.22em] uppercase text-muted-foreground hover:text-foreground transition-colors py-1"
             >
-              ← AI Runner Institute
+              ← Zavod AI Runner
             </Link>
             <a
               href="#wr-contact"
               onClick={() => setIsMobileMenuOpen(false)}
               className="text-center font-mono text-xs tracking-[0.22em] uppercase text-primary hover:text-foreground transition-colors mt-1"
             >
-              Start a Project →
+              Začni projekt →
             </a>
           </div>
         )}

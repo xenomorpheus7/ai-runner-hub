@@ -1,16 +1,16 @@
 const techStack = [
-  { name: "React", desc: "UI library" },
-  { name: "Next.js", desc: "Full-stack framework" },
-  { name: "TypeScript", desc: "Type safety" },
-  { name: "Tailwind CSS", desc: "Utility styling" },
-  { name: "Vite", desc: "Build tool" },
-  { name: "Node.js", desc: "Server runtime" },
-  { name: "Supabase", desc: "Backend & DB" },
-  { name: "Vercel", desc: "Edge deployment" },
-  { name: "Cloudflare", desc: "CDN & security" },
-  { name: "WordPress", desc: "CMS platform" },
-  { name: "Framer", desc: "Design & motion" },
-  { name: "Figma", desc: "UI/UX design" },
+  { name: "React", desc: "UI knjižnica" },
+  { name: "Next.js", desc: "Full-stack ogrodje" },
+  { name: "TypeScript", desc: "Tipna varnost" },
+  { name: "Tailwind CSS", desc: "Sodobno oblikovanje" },
+  { name: "Vite", desc: "Bliskovit gradnik" },
+  { name: "Node.js", desc: "Strežniško okolje" },
+  { name: "Supabase", desc: "Baza & zaledje" },
+  { name: "Vercel", desc: "Edge gostovanje" },
+  { name: "Cloudflare", desc: "CDN & varnost" },
+  { name: "WordPress", desc: "CMS platforma" },
+  { name: "Framer", desc: "Animacije & gibanje" },
+  { name: "Figma", desc: "UI/UX oblikovanje" },
 ];
 
 const WebRunnerStack = () => {
@@ -23,14 +23,14 @@ const WebRunnerStack = () => {
         <div className="inline-flex items-center gap-2 glass-panel px-4 py-2 rounded-full mb-4">
           <span className="w-6 h-px bg-gradient-to-r from-transparent via-primary to-transparent" />
           <span className="font-mono text-[11px] tracking-[0.35em] uppercase text-muted-foreground">
-            Technology Stack
+            Tehnološki nabor
           </span>
           <span className="w-6 h-px bg-gradient-to-r from-transparent via-primary to-transparent" />
         </div>
-        <h2 className="text-3xl md:text-4xl font-semibold mb-3">Built with the best</h2>
+        <h2 className="text-3xl md:text-4xl font-semibold mb-3">Zgrajeno z vrhunskimi orodji</h2>
         <p className="text-muted-foreground max-w-xl mx-auto text-sm">
-          We choose the right tool for each project — from lightweight landing pages
-          to complex full-stack applications.
+          Za vsak projekt izberemo optimalno tehnologijo – od bliskovito hitrih pristajalnih strani
+          do celovitih spletnih aplikacij.
         </p>
       </div>
 
