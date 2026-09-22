@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="ambientGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="wGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#F3E8FF"/>
+      <stop offset="100%" stop-color="#D8B4FE"/>
+    </linearGradient>
+    <filter id="violetGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="28" result="blur1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur2"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur3"/>
+      <feMerge>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur3"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Dark rounded squircle background -->
+  <rect width="512" height="512" rx="112" fill="#0A0714"/>
+  
+  <!-- Subtle ambient inner glow -->
+  <rect width="512" height="512" rx="112" fill="url(#ambientGlow)"/>
+
+  <!-- Subtle border -->
+  <rect x="6" y="6" width="500" height="500" rx="106" fill="none" stroke="#A855F7" stroke-width="4" stroke-opacity="0.3"/>
+
+  <!-- Glowing W aura -->
+  <path d="M 80 136 L 184 396 L 256 246 L 328 396 L 432 136"
+        fill="none"
+        stroke="#8B5CF6"
+        stroke-width="56"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        filter="url(#violetGlow)"
+        opacity="0.85"/>
+
+  <!-- Core neon violet line -->
+  <path d="M 80 136 L 184 396 L 256 246 L 328 396 L 432 136"
+        fill="none"
+        stroke="#C084FC"
+        stroke-width="30"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+  <!-- Brilliant white/lavender center line -->
+  <path d="M 80 136 L 184 396 L 256 246 L 328 396 L 432 136"
+        fill="none"
+        stroke="url(#wGrad)"
+        stroke-width="14"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+</svg>
