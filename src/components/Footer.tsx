@@ -28,7 +28,7 @@ const Footer = () => {
   const socials = [
     { icon: Github, href: "#", label: "GitHub" },
     { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/robert-vogrinec-57b3411b8/", label: "LinkedIn" },
     { icon: Youtube, href: "#", label: "YouTube" },
   ];
 
@@ -56,6 +56,8 @@ const Footer = () => {
                 <a
                   key={index}
                   href={social.href}
+                  target={social.href.startsWith("http") ? "_blank" : undefined}
+                  rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   aria-label={social.label}
                   className="w-10 h-10 flex items-center justify-center glass-panel rounded-full text-muted-foreground hover:text-foreground transition-colors"
                 >

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const socials = [
   { icon: Github,   href: "#", label: "GitHub" },
   { icon: Twitter,  href: "#", label: "Twitter / X" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/robert-vogrinec-57b3411b8/", label: "LinkedIn" },
   { icon: Mail,     href: "#wr-contact", label: "E-pošta" },
 ];
 
@@ -50,6 +50,8 @@ const WebRunnerFooter = () => {
                 <a
                   key={s.label}
                   href={s.href}
+                  target={s.href.startsWith("http") ? "_blank" : undefined}
+                  rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   aria-label={s.label}
                   className="w-9 h-9 flex items-center justify-center glass-panel rounded-full text-muted-foreground hover:text-foreground transition-colors"
                 >
