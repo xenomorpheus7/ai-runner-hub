@@ -26,7 +26,7 @@ const Footer = () => {
   };
 
   const socials = [
-    { icon: Github, href: "#", label: "GitHub" },
+    { icon: Github, href: "https://github.com/xenomorpheus7", label: "GitHub" },
     { icon: Twitter, href: "#", label: "Twitter" },
     { icon: Linkedin, href: "https://www.linkedin.com/in/robert-vogrinec-57b3411b8/", label: "LinkedIn" },
     { icon: Youtube, href: "#", label: "YouTube" },
