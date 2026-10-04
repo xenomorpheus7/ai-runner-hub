@@ -78,11 +78,7 @@ const WebRunnerContact = () => {
 
           {/* Right — form */}
           <div className="relative glass-card rounded-3xl p-8 md:p-10">
-            <div className="absolute -top-3 left-8 px-4 py-1 glass-panel rounded-full font-mono text-[10px] tracking-[0.3em] uppercase text-muted-foreground">
-              Povpraševanje WEBRUNNER
-            </div>
-
-            <form className="space-y-5 mt-4">
+            <form className="space-y-5">
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-1.5">
                   <label className="font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
