@@ -1,59 +1,84 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <defs>
-    <radialGradient id="ambientGlow" cx="50%" cy="50%" r="50%">
+    <!-- Dark background radial glow -->
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
       <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.35"/>
       <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="wGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#FFFFFF"/>
-      <stop offset="60%" stop-color="#F3E8FF"/>
-      <stop offset="100%" stop-color="#D8B4FE"/>
+
+    <!-- Wing 1 (Left Outer): Electric Blue to Vivid Violet -->
+    <linearGradient id="gradW1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#60A5FA"/>
+      <stop offset="100%" stop-color="#A855F7"/>
     </linearGradient>
-    <filter id="violetGlow" x="-50%" y="-50%" width="200%" height="200%">
+
+    <!-- Wing 2 (Left Inner): Luminous Violet to Rich Purple -->
+    <linearGradient id="gradW2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#C084FC"/>
+      <stop offset="100%" stop-color="#9333EA"/>
+    </linearGradient>
+
+    <!-- Wing 3 (Right Inner): Rich Purple to Deep Violet -->
+    <linearGradient id="gradW3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#A855F7"/>
+      <stop offset="100%" stop-color="#7E22CE"/>
+    </linearGradient>
+
+    <!-- Wing 4 (Right Outer): Vivid Violet to Soft Pink -->
+    <linearGradient id="gradW4" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#A855F7"/>
+      <stop offset="100%" stop-color="#F472B6"/>
+    </linearGradient>
+
+    <!-- Ambient Glow Filter -->
+    <filter id="neonBloom" x="-50%" y="-50%" width="200%" height="200%">
       <feGaussianBlur in="SourceGraphic" stdDeviation="28" result="blur1"/>
       <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur2"/>
-      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur3"/>
       <feMerge>
         <feMergeNode in="blur1"/>
         <feMergeNode in="blur2"/>
-        <feMergeNode in="blur3"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
+
+    <!-- Drop Shadow for Outer Wings -->
+    <filter id="wingShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.65"/>
+    </filter>
   </defs>
 
-  <!-- Dark rounded squircle background -->
-  <rect width="512" height="512" rx="112" fill="#0A0714"/>
+  <!-- 1. Background Squircle -->
+  <rect width="512" height="512" rx="122" fill="#090612"/>
+  <rect width="512" height="512" rx="122" fill="url(#bgGlow)"/>
   
-  <!-- Subtle ambient inner glow -->
-  <rect width="512" height="512" rx="112" fill="url(#ambientGlow)"/>
+  <!-- Subtle border rim -->
+  <rect x="3" y="3" width="506" height="506" rx="119" fill="none" stroke="#A855F7" stroke-width="3" stroke-opacity="0.4"/>
 
-  <!-- Subtle border -->
-  <rect x="6" y="6" width="500" height="500" rx="106" fill="none" stroke="#A855F7" stroke-width="4" stroke-opacity="0.3"/>
+  <!-- 2. Diffused Neon Glow Aura -->
+  <g filter="url(#neonBloom)" opacity="0.8">
+    <polygon points="66,128 136,128 216,378 146,378" fill="#A855F7"/>
+    <polygon points="158,378 224,378 288,214 256,214" fill="#A855F7"/>
+    <polygon points="224,214 256,214 354,378 288,378" fill="#A855F7"/>
+    <polygon points="296,378 366,378 446,128 376,128" fill="#A855F7"/>
+  </g>
 
-  <!-- Glowing W aura -->
-  <path d="M 80 136 L 184 396 L 256 246 L 328 396 L 432 136"
-        fill="none"
-        stroke="#8B5CF6"
-        stroke-width="56"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        filter="url(#violetGlow)"
-        opacity="0.85"/>
+  <!-- 3. Inner Wings (Behind) -->
+  <polygon points="158,378 224,378 288,214 256,214" fill="url(#gradW2)"/>
+  <polygon points="224,214 256,214 354,378 288,378" fill="url(#gradW3)"/>
 
-  <!-- Core neon violet line -->
-  <path d="M 80 136 L 184 396 L 256 246 L 328 396 L 432 136"
-        fill="none"
-        stroke="#C084FC"
-        stroke-width="30"
-        stroke-linecap="round"
-        stroke-linejoin="round"/>
+  <!-- 4. Outer Wings (Foreground with Shadow) -->
+  <polygon points="66,128 136,128 216,378 146,378" fill="url(#gradW1)" filter="url(#wingShadow)"/>
+  <polygon points="296,378 366,378 446,128 376,128" fill="url(#gradW4)" filter="url(#wingShadow)"/>
 
-  <!-- Brilliant white/lavender center line -->
-  <path d="M 80 136 L 184 396 L 256 246 L 328 396 L 432 136"
-        fill="none"
-        stroke="url(#wGrad)"
-        stroke-width="14"
-        stroke-linecap="round"
-        stroke-linejoin="round"/>
+  <!-- 5. Luminous Apex Diamond -->
+  <polygon points="256,190 272,214 256,238 240,214" fill="#FFFFFF"/>
+
+  <!-- 6. Crisp Neon Bevel Highlights -->
+  <!-- Top Chamfer Lines -->
+  <line x1="66" y1="128" x2="136" y2="128" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="376" y1="128" x2="446" y2="128" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- Side Rim Highlights -->
+  <line x1="66" y1="128" x2="146" y2="378" stroke="#93C5FD" stroke-width="2" opacity="0.8"/>
+  <line x1="446" y1="128" x2="366" y2="378" stroke="#F9A8D4" stroke-width="2" opacity="0.8"/>
 </svg>
