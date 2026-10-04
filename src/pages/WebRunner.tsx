@@ -17,11 +17,11 @@ const WebRunner = () => {
         <WebRunnerHeader />
         <main>
           <WebRunnerHero />
-          <WebRunnerProjects />
           <WebRunnerStack />
           <WebRunnerProcess />
           <WebRunnerMetrics />
           <WebRunnerFAQ />
+          <WebRunnerProjects />
           <WebRunnerContact />
         </main>
         <WebRunnerFooter />
