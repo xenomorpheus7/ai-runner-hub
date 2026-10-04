@@ -3,10 +3,11 @@ import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const navLinks = [
-  { href: "#wr-home",    label: "Domov" },
-  { href: "#wr-process", label: "Postopek" },
-  { href: "#wr-metrics", label: "Zmogljivost" },
-  { href: "#wr-faq",    label: "Vprašanja" },
+  { href: "#wr-home",     label: "Domov" },
+  { href: "#wr-projects", label: "Projekti" },
+  { href: "#wr-process",  label: "Postopek" },
+  { href: "#wr-metrics",  label: "Zmogljivost" },
+  { href: "#wr-faq",      label: "Vprašanja" },
 ];
 
 const WebRunnerHeader = () => {

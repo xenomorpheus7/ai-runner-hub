@@ -68,6 +68,7 @@ const WebRunnerFooter = () => {
             </h4>
             <ul className="space-y-3">
               {[
+                { label: "Izdelani projekti", href: "#wr-projects" },
                 { label: "Kako deluje",     href: "#wr-process" },
                 { label: "Zmogljivost",     href: "#wr-metrics" },
                 { label: "Pogosta vprašanja", href: "#wr-faq" },

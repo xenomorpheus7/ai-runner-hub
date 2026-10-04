@@ -1,5 +1,6 @@
 import NeuralNetworkBackground from "@/components/NeuralNetworkBackground";
 import WebRunnerHero from "@/components/webrunner/WebRunnerHero";
+import WebRunnerProjects from "@/components/webrunner/WebRunnerProjects";
 import WebRunnerStack from "@/components/webrunner/WebRunnerStack";
 import WebRunnerProcess from "@/components/webrunner/WebRunnerProcess";
 import WebRunnerMetrics from "@/components/webrunner/WebRunnerMetrics";
@@ -16,6 +17,7 @@ const WebRunner = () => {
         <WebRunnerHeader />
         <main>
           <WebRunnerHero />
+          <WebRunnerProjects />
           <WebRunnerStack />
           <WebRunnerProcess />
           <WebRunnerMetrics />
