@@ -96,7 +96,7 @@ const WebRunnerProjects = () => {
         }}
       />
 
-      <div className="relative z-10 container mx-auto px-6">
+      <div className="relative z-10 container mx-auto px-7 sm:px-8 md:px-6">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 glass-panel px-4 py-2 rounded-full mb-4">

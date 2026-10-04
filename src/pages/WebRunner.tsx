@@ -11,7 +11,7 @@ import WebRunnerFooter from "@/components/webrunner/WebRunnerFooter";
 
 const WebRunner = () => {
   return (
-    <div className="relative isolate min-h-screen bg-background text-foreground overflow-x-hidden">
+    <div className="relative isolate min-h-screen bg-background text-foreground overflow-x-hidden px-4 sm:px-6 md:px-0">
       <NeuralNetworkBackground />
       <div className="relative z-10">
         <WebRunnerHeader />
