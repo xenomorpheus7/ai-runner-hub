@@ -1,4 +1,4 @@
-import { Github, Twitter, Linkedin, Youtube } from "lucide-react";
+import { Github, Facebook, Linkedin, Youtube } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/INSTITUTE.png";
 
@@ -27,7 +27,7 @@ const Footer = () => {
 
   const socials = [
     { icon: Github, href: "https://github.com/xenomorpheus7", label: "GitHub" },
-    { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: Facebook, href: "https://www.facebook.com/RobertRoyce97", label: "Facebook" },
     { icon: Linkedin, href: "https://www.linkedin.com/in/robert-vogrinec-57b3411b8/", label: "LinkedIn" },
     { icon: Youtube, href: "#", label: "YouTube" },
   ];

@@ -1,9 +1,9 @@
-import { Github, Twitter, Linkedin, Mail } from "lucide-react";
+import { Github, Facebook, Linkedin, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const socials = [
   { icon: Github,   href: "https://github.com/xenomorpheus7", label: "GitHub" },
-  { icon: Twitter,  href: "#", label: "Twitter / X" },
+  { icon: Facebook, href: "https://www.facebook.com/RobertRoyce97", label: "Facebook" },
   { icon: Linkedin, href: "https://www.linkedin.com/in/robert-vogrinec-57b3411b8/", label: "LinkedIn" },
   { icon: Mail,     href: "#wr-contact", label: "E-pošta" },
 ];
