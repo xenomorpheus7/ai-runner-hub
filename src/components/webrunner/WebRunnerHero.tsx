@@ -128,14 +128,14 @@ const WebRunnerHero = () => {
           {[
             { icon: Zap, label: "FCP hitrost", value: "< 0.9s" },
             { icon: Globe, label: "Lighthouse ocena", value: "100" },
-            { icon: Code2, label: "Hitra izvedba", value: "7–25 dni" },
+            { icon: Code2, label: "Hitra izvedba" },
           ].map(({ icon: Icon, label, value }) => (
             <div key={label} className="flex items-center gap-3">
               <Icon size={16} className="text-primary" />
               <span className="font-mono text-xs text-muted-foreground tracking-widest uppercase">
                 {label}
               </span>
-              <span className="font-semibold text-foreground text-sm">{value}</span>
+              {value && <span className="font-semibold text-foreground text-sm">{value}</span>}
             </div>
           ))}
         </div>

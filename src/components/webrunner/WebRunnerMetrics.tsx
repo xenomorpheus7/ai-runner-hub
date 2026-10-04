@@ -5,7 +5,7 @@ const metrics = [
   { value: 0.9, suffix: "s", prefix: "< ", label: "First Contentful Paint", sub: "Povprečje izvedenih strani" },
   { value: 99.9, suffix: "%", prefix: "", label: "Uptime zanesljivost", sub: "Cloudflare Edge & CDN" },
   { value: 50, suffix: "kb", prefix: "< ", label: "CSS paket (gzip)", sub: "Čista, optimizirana koda" },
-  { value: 25, suffix: " dni", prefix: "< ", label: "Hitra izvedba", sub: "Od ideje do objave" },
+  { display: "Agilno", value: 0, suffix: "", prefix: "", label: "Hitra izvedba", sub: "Od ideje do objave" },
   { value: 100, suffix: "%", prefix: "", label: "Mobilna prilagojenost", sub: "Brezhibno na vseh napravah" },
 ];
 
@@ -28,14 +28,20 @@ function useCountUp(target: number, duration = 1800, started: boolean) {
   return count;
 }
 
-function MetricCard({ metric, started }: { metric: typeof metrics[0]; started: boolean }) {
+function MetricCard({ metric, started }: { metric: (typeof metrics)[0]; started: boolean }) {
   const count = useCountUp(metric.value, 1600, started);
   return (
     <div className="glass-card rounded-3xl p-8 flex flex-col items-center text-center group hover:translate-y-[-4px] transition-all duration-500">
       <div className="text-4xl md:text-5xl font-semibold text-glow mb-2 font-mono">
-        {metric.prefix}
-        {count}
-        {metric.suffix}
+        {"display" in metric && metric.display ? (
+          metric.display
+        ) : (
+          <>
+            {metric.prefix}
+            {count}
+            {metric.suffix}
+          </>
+        )}
       </div>
       <h3 className="text-sm font-semibold mb-1 tracking-wide">{metric.label}</h3>
       <p className="font-mono text-[10px] text-muted-foreground tracking-wider uppercase">{metric.sub}</p>
