@@ -1,5 +1,7 @@
-import { Mail, ArrowRight } from "lucide-react";
+import { useState } from "react";
+import { Mail, ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 
 const projectTypes = [
   "Pristajalne strani",
@@ -11,6 +13,61 @@ const projectTypes = [
 ];
 
 const WebRunnerContact = () => {
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const name = formData.get("name")?.toString().trim();
+    const email = formData.get("email")?.toString().trim();
+    const type = formData.get("type")?.toString();
+    const message = formData.get("message")?.toString().trim();
+    const budget = formData.get("budget")?.toString().trim();
+
+    if (!name || !email) {
+      toast.error("Prosimo, vnesite svoje ime in e-poštni naslov.");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/robert.vogrinec7@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          ime_in_priimek: name,
+          email: email,
+          vrsta_projekta: type || "Ni navedeno",
+          opis_projekta: message || "Brez opisa",
+          rok_ali_okvir: budget || "Po dogovoru",
+          _subject: `WEBRUNNER povpraševanje: ${name}`,
+          _template: "table",
+          _captcha: "false",
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        form.reset();
+        toast.success("Povpraševanje je bilo uspešno poslano!");
+      } else {
+        throw new Error("Napaka pri pošiljanju");
+      }
+    } catch (err) {
+      console.error(err);
+      toast.error("Prišlo je do težave pri pošiljanju. Pišite neposredno na robert.vogrinec7@gmail.com");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section id="wr-contact" className="relative py-32 overflow-hidden">
       {/* Ambient glow */}
@@ -44,7 +101,12 @@ const WebRunnerContact = () => {
               </div>
               <div>
                 <h4 className="font-semibold text-sm mb-1">E-pošta</h4>
-                <p className="text-muted-foreground text-sm">contact@airunner.institute</p>
+                <a
+                  href="mailto:robert.vogrinec7@gmail.com"
+                  className="text-muted-foreground hover:text-foreground text-sm transition-colors"
+                >
+                  robert.vogrinec7@gmail.com
+                </a>
                 <p className="text-muted-foreground text-xs mt-1">Odgovorimo v roku 24 ur.</p>
               </div>
             </div>
@@ -78,86 +140,119 @@ const WebRunnerContact = () => {
 
           {/* Right — form */}
           <div className="relative glass-card rounded-3xl p-8 md:p-10">
-            <form className="space-y-5">
-              <div className="grid grid-cols-2 gap-4">
+            {submitted ? (
+              <div className="text-center py-12 space-y-4">
+                <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-2">
+                  <CheckCircle2 size={36} />
+                </div>
+                <h3 className="text-2xl font-semibold">Povpraševanje oddano!</h3>
+                <p className="text-muted-foreground text-sm max-w-md mx-auto leading-relaxed">
+                  Hvala za zaupanje. Vaše sporočilo je bilo poslano. Odgovorili vam bomo v najkrajšem možnem času (običajno v roku 24 ur).
+                </p>
+                <Button
+                  type="button"
+                  onClick={() => setSubmitted(false)}
+                  variant="outline"
+                  className="rounded-full mt-4 text-xs font-mono uppercase tracking-widest"
+                >
+                  Pošlji novo sporočilo
+                </Button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-1.5">
+                    <label className="font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
+                      Ime in priimek
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      required
+                      placeholder="Janez Novak"
+                      className="w-full px-4 py-3 rounded-xl glass-input text-foreground placeholder:text-muted-foreground/40 text-sm focus:outline-none focus:border-primary/50 transition-colors"
+                    />
+                  </div>
+                  <div className="space-y-1.5">
+                    <label className="font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
+                      E-poštni naslov
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      required
+                      placeholder="ime@podjetje.si"
+                      className="w-full px-4 py-3 rounded-xl glass-input text-foreground placeholder:text-muted-foreground/40 text-sm focus:outline-none focus:border-primary/50 transition-colors"
+                    />
+                  </div>
+                </div>
+
                 <div className="space-y-1.5">
                   <label className="font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
-                    Ime in priimek
+                    Vrsta projekta
+                  </label>
+                  <select
+                    name="type"
+                    className="w-full px-4 py-3 rounded-xl glass-input text-foreground text-sm focus:outline-none focus:border-primary/50 transition-colors appearance-none"
+                  >
+                    <option value="" style={{ background: "hsl(226 48% 10%)" }}>Izberite vrsto strani...</option>
+                    <option value="Pristajalna stran (Landing page)" style={{ background: "hsl(226 48% 10%)" }}>Pristajalna stran (Landing page)</option>
+                    <option value="Poslovna spletna stran" style={{ background: "hsl(226 48% 10%)" }}>Poslovna spletna stran</option>
+                    <option value="Spletna trgovina" style={{ background: "hsl(226 48% 10%)" }}>Spletna trgovina</option>
+                    <option value="Aplikacija po meri" style={{ background: "hsl(226 48% 10%)" }}>Aplikacija po meri</option>
+                    <option value="Umetna inteligenca (AI integracija)" style={{ background: "hsl(226 48% 10%)" }}>Umetna inteligenca (AI integracija)</option>
+                    <option value="Drugo / Po dogovoru" style={{ background: "hsl(226 48% 10%)" }}>Drugo / Po dogovoru</option>
+                  </select>
+                </div>
+
+                <div className="space-y-1.5">
+                  <label className="font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
+                    Opis projekta
+                  </label>
+                  <textarea
+                    rows={4}
+                    name="message"
+                    required
+                    placeholder="Opišite vašo dejavnost, cilje nove strani, želene funkcije ali obstoječe gradivo..."
+                    className="w-full px-4 py-3 rounded-xl glass-input text-foreground placeholder:text-muted-foreground/40 text-sm focus:outline-none focus:border-primary/50 transition-colors resize-none"
+                  />
+                </div>
+
+                <div className="space-y-1.5">
+                  <label className="font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
+                    Časovni okvir / Želeni rok
                   </label>
                   <input
                     type="text"
-                    name="name"
-                    placeholder="Janez Novak"
+                    name="budget"
+                    placeholder="npr. v roku enega meseca / po dogovoru"
                     className="w-full px-4 py-3 rounded-xl glass-input text-foreground placeholder:text-muted-foreground/40 text-sm focus:outline-none focus:border-primary/50 transition-colors"
                   />
                 </div>
-                <div className="space-y-1.5">
-                  <label className="font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
-                    E-poštni naslov
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="ime@podjetje.si"
-                    className="w-full px-4 py-3 rounded-xl glass-input text-foreground placeholder:text-muted-foreground/40 text-sm focus:outline-none focus:border-primary/50 transition-colors"
-                  />
-                </div>
-              </div>
 
-              <div className="space-y-1.5">
-                <label className="font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
-                  Vrsta projekta
-                </label>
-                <select
-                  name="type"
-                  className="w-full px-4 py-3 rounded-xl glass-input text-foreground text-sm focus:outline-none focus:border-primary/50 transition-colors appearance-none"
+                <Button
+                  type="submit"
+                  disabled={loading}
+                  className="group w-full py-4 rounded-full text-sm tracking-[0.2em] uppercase overflow-hidden relative text-foreground disabled:opacity-50"
                 >
-                  <option value="" style={{ background: "hsl(226 48% 10%)" }}>Izberite vrsto strani...</option>
-                  <option value="landing" style={{ background: "hsl(226 48% 10%)" }}>Pristajalna stran (Landing page)</option>
-                  <option value="business" style={{ background: "hsl(226 48% 10%)" }}>Poslovna spletna stran</option>
-                  <option value="ecommerce" style={{ background: "hsl(226 48% 10%)" }}>Spletna trgovina</option>
-                  <option value="custom" style={{ background: "hsl(226 48% 10%)" }}>Aplikacija po meri</option>
-                  <option value="ai" style={{ background: "hsl(226 48% 10%)" }}>Umetna inteligenca (AI integracija)</option>
-                  <option value="other" style={{ background: "hsl(226 48% 10%)" }}>Drugo / Po dogovoru</option>
-                </select>
-              </div>
-
-              <div className="space-y-1.5">
-                <label className="font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
-                  Opis projekta
-                </label>
-                <textarea
-                  rows={4}
-                  name="message"
-                  placeholder="Opišite vašo dejavnost, cilje nove strani, želene funkcije ali obstoječe gradivo..."
-                  className="w-full px-4 py-3 rounded-xl glass-input text-foreground placeholder:text-muted-foreground/40 text-sm focus:outline-none focus:border-primary/50 transition-colors resize-none"
-                />
-              </div>
-
-              <div className="space-y-1.5">
-                <label className="font-mono text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
-                  Časovni okvir / Želeni rok
-                </label>
-                <input
-                  type="text"
-                  name="budget"
-                  placeholder="npr. v roku enega meseca / po dogovoru"
-                  className="w-full px-4 py-3 rounded-xl glass-input text-foreground placeholder:text-muted-foreground/40 text-sm focus:outline-none focus:border-primary/50 transition-colors"
-                />
-              </div>
-
-              <Button
-                type="submit"
-                className="group w-full py-4 rounded-full text-sm tracking-[0.2em] uppercase overflow-hidden relative text-foreground"
-              >
-                <span className="absolute inset-0 liquid-border opacity-90" />
-                <span className="absolute inset-0 bg-background/40" />
-                <span className="relative z-10 flex items-center justify-center gap-2">
-                  Pošlji povpraševanje
-                  <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
-                </span>
-              </Button>
-            </form>
+                  <span className="absolute inset-0 liquid-border opacity-90" />
+                  <span className="absolute inset-0 bg-background/40" />
+                  <span className="relative z-10 flex items-center justify-center gap-2">
+                    {loading ? (
+                      <>
+                        <Loader2 size={15} className="animate-spin" />
+                        Pošiljanje...
+                      </>
+                    ) : (
+                      <>
+                        Pošlji povpraševanje
+                        <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
+                      </>
+                    )}
+                  </span>
+                </Button>
+              </form>
+            )}
           </div>
         </div>
       </div>
